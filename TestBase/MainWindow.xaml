@@ -1,0 +1,33 @@
+﻿<Window x:Class="TestBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestBase"
+        mc:Ignorable="d"
+        Title="Lista de Nomes" Height="200" Width="320"
+        MinHeight="200" MinWidth="320"
+        MaxHeight="1200" MaxWidth="1400">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label>Nomes</Label>
+        <ListBox Grid.Row="1" BorderThickness="2" x:Name="lstName" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+            <TextBox x:Name="txtName" BorderThickness="2" />
+            <Button x:Name="btnAdd" Margin="0,5,0,0" Click="btnAddName_Click">Adicionar Nome</Button>
+            <Button x:Name="btnRmv" Margin="0,5,0,0" Click="btnRmvName_Click">Remover Nome</Button>
+        </StackPanel>
+        <TextBlock Text="Quantidade de Nomes: " Grid.Column="1" Margin="0,0,0,8" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Column="1" x:Name="DisplayName" Text="0" Margin="0,0,8,8" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
